@@ -130,9 +130,14 @@ source "/etc/profile.d/rvm.sh"
 # # initialise completions with ZSH's compinit
 # autoload -Uz compinit && compinit
 
+# Rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-export TERM=xterm-256color
 eval "$(rbenv init -)"
+
+export TERM=xterm-256color
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # Alias
 alias 'gitlg'="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
